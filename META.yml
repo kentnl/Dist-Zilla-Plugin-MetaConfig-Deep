@@ -29,4 +29,8 @@ requires:
   perl: '5.006'
   strict: '0'
   warnings: '0'
+resources:
+  bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-MetaConfig-Deep/issues
+  homepage: https://github.com/kentnl/Dist-Zilla-Plugin-MetaConfig-Deep
+  repository: https://github.com/kentnl/Dist-Zilla-Plugin-MetaConfig-Deep.git
 version: '0.001000'
