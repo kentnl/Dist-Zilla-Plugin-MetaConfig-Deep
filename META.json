@@ -124,7 +124,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::MetaConfig::Deep" : {
          "file" : "lib/Dist/Zilla/Plugin/MetaConfig/Deep.pm",
-         "version" : "0.001000"
+         "version" : "0.001001"
       }
    },
    "release_status" : "stable",
@@ -139,7 +139,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-MetaConfig-Deep"
       }
    },
-   "version" : "0.001000",
+   "version" : "0.001001",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -167,7 +167,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig::Deep",
             "name" : "@Author::KENTNL/MetaConfig::Deep",
-            "version" : "0.001000",
+            "version" : "0.001001",
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::MetaProvider" : "5.041",
@@ -995,7 +995,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.001000-source",
+                  "tag" : "0.001001-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v"
                },
@@ -1130,7 +1130,7 @@
                   "branch" : "releases",
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.001000",
+                  "tag" : "0.001001",
                   "tag_format" : "%v",
                   "tag_message" : "v%v"
                },
