@@ -1,4 +1,6 @@
 Release history for Dist-Zilla-Plugin-MetaConfig-Deep
 
 {{$NEXT}}
+
+0.001000 2015-11-15T03:56:08Z d6682ce
  - First version.
