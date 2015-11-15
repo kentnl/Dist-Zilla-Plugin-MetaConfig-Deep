@@ -40,11 +40,11 @@ sub _metadata_class_composes {
 
   my $composed = {};
   for my $component ( $plugin->meta->calculate_all_roles_with_inheritance ) {
-    next if $component->name =~ /\|/;    # skip unions.
+    next if $component->name =~ /\||_ANON_/;    # skip unions and anon classes
     $composed->{ $component->name } = $component->name->VERSION;
   }
   for my $component ( $plugin->meta->linearized_isa ) {
-    next if $component->meta->name =~ /\|/;    # skip unions.
+    next if $component->meta->name =~ /\||_ANON_/;    # skip unions.
     next if $component->meta->name eq $plugin->meta->name; # skip self
     $composed->{ $component->meta->name } = $component->meta->name->VERSION;
   }
