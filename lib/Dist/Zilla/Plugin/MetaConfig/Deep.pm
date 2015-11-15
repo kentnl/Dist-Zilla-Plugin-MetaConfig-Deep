@@ -46,6 +46,11 @@ sub _metadata_class_composes {
     next if $component->name =~ /\|/;    # skip unions.
     $composed->{ $component->name } = $component->name->VERSION;
   }
+  for my $component ( $plugin->meta->linearized_isa ) {
+    next if $component->meta->name =~ /\|/;    # skip unions.
+    $composed->{ $component->meta->name } = $component->meta->name->VERSION;
+  }
+
   return $composed;
 }
 
