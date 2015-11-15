@@ -38,10 +38,7 @@ sub _metadata_plugins {
 sub _metadata_class_composes {
   my ( $self, $plugin ) = @_;
 
-  my $composed = {
-  
-  };
-  $composed->{x_for} = $plugin->meta->name;
+  my $composed = {};
   for my $component ( $plugin->meta->calculate_all_roles_with_inheritance ) {
     next if $component->name =~ /\|/;    # skip unions.
     $composed->{ $component->name } = $component->name->VERSION;
