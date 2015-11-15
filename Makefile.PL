@@ -17,7 +17,7 @@ my %WriteMakefileArgs = (
   "MIN_PERL_VERSION" => "5.006",
   "NAME" => "Dist::Zilla::Plugin::MetaConfig::Deep",
   "PREREQ_PM" => {
-    "Dist::Zilla::Plugin::MetaConfig" => 0,
+    "Dist::Zilla::Role::MetaProvider" => 0,
     "Moose" => 0,
     "strict" => 0,
     "warnings" => 0
@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Dist::Zilla::Plugin::MetaConfig" => 0,
+  "Dist::Zilla::Role::MetaProvider" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Moose" => 0,
