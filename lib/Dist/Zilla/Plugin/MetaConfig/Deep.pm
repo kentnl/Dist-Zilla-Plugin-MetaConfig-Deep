@@ -1,4 +1,4 @@
-use 5.006;  # our
+use 5.006;    # our
 use strict;
 use warnings;
 
@@ -10,8 +10,58 @@ our $VERSION = '0.001000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Moose;
-extends 'Dist::Zilla::Plugin::MetaConfig';
+use Moose qw( with );
+
+with 'Dist::Zilla::Role::MetaProvider';
+
+sub _metadata_perl { { version => $] } }
+
+sub _metadata_zilla {
+  my ($self) = @_;
+
+  my $config = $self->zilla->dump_config;
+  return {
+    class   => $self->zilla->meta->name,
+    version => $self->zilla->VERSION,
+    ( keys %$config ? ( config => $config ) : () ),
+  };
+}
+
+sub _metadata_plugins {
+  my ($self) = @_;
+  return [ map { $self->_metadata_plugin($_) } @{ $self->zilla->plugins } ];
+}
+
+sub _metadata_class_composes {
+  my ( $plugin ) = @_;
+  my ( @composed ) = map { $_->name } 
+    $plugin->meta->calculate_all_roles_with_inheritance;
+  return { 
+    map { $_ , $_->VERSION } @composed
+  };
+}
+sub _metadata_plugin {
+  my ( $self, $plugin ) = @_;
+  my $config = $plugin->dump_config;
+  return {
+    class   => $plugin->meta->name,
+    name    => $plugin->plugin_name,
+    version => $plugin->VERSION,
+    ( keys %$config ? ( config => $config ) : () ),
+  };
+}
+
+sub metadata {
+  my ($self) = @_;
+
+  my $dump = {};
+
+  $dump->{zilla}   = $self->_metadata_zilla;
+  $dump->{perl}    = $self->_metadata_perl;
+  $dump->{plugins} = $self->_metadata_plugins;
+
+  return { x_Dist_Zilla => $dump };
+}
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
@@ -31,6 +81,19 @@ Dist::Zilla::Plugin::MetaConfig::Deep - Experimental enhancements to MetaConfig
 =head1 VERSION
 
 version 0.001000
+
+=head1 DESCRIPTION
+
+This module serves as an experimental space for features I think the core MetaConfig I<should>
+provide, but in a state of uncertainty about how they should be implemented.
+
+The objective is to extract more metadata about plugins without plugins having to percolate
+hand-written adjustments system-wide to get a useful interface.
+
+=head2 Composition Data
+
+This exposes data about the roles and parent classes, and their respective versions in play
+on a given plugin, to give greater depth for problem diagnosis.
 
 =head1 AUTHOR
 
