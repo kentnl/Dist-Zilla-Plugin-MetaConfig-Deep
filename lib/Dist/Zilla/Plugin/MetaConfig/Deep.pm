@@ -114,7 +114,7 @@ This exposes data about the roles and parent classes, and their respective versi
 on a given plugin, to give greater depth for problem diagnosis.
 
     {
-      "class" : "Dist::Zilla::Plugin::AutoPrereqs", 
+      "class" : "Dist::Zilla::Plugin::AutoPrereqs",
       "name" : "@Author::KENTNL/AutoPrereqs", "version" : "5.041",
       "x_composes" : {
         "Dist::Zilla::Role::ConfigDumper"   : "5.041",
