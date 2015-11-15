@@ -14,6 +14,27 @@ This exposes data about the roles and parent classes, and their
 respective versions in play on a given plugin, to give greater depth for
 problem diagnosis.
 
+    {
+      "class" : "Dist::Zilla::Plugin::AutoPrereqs", 
+      "name" : "@Author::KENTNL/AutoPrereqs", "version" : "5.041",
+      "x_composes" : {
+        "Dist::Zilla::Role::ConfigDumper"   : "5.041",
+        "Dist::Zilla::Role::FileFinderUser" : "5.041",
+        "Dist::Zilla::Role::PPI"            : "5.041",
+        "Dist::Zilla::Role::Plugin"         : "5.041",
+        "Dist::Zilla::Role::PrereqSource"   : "5.041",
+        "Moose::Object"                     : "2.1604"
+      }
+    }
+
+@ETHER has already made excellent inroads into making this sort of
+metadata exposed via exporting "version" in all "metaconfig" plugin's
+she has access to, and this is an attempt at providing the same level of
+insight without requiring so much explict buy-in from plugin authors.
+
+This also has the neat side effect of showing what phases a plug-in is
+subscribed to.
+
 INSTALLATION
 
 This is a Perl module distribution. It should be installed with whichever

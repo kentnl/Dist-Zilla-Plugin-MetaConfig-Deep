@@ -19,13 +19,13 @@ sub _metadata_perl { { version => $] } }
 sub _metadata_zilla {
   my ($self) = @_;
 
-  my $config = $self->zilla->dump_config;
-  my $composed = $self->_metadata_class_composes($self->zilla);
+  my $config   = $self->zilla->dump_config;
+  my $composed = $self->_metadata_class_composes( $self->zilla );
 
   return {
     class   => $self->zilla->meta->name,
     version => $self->zilla->VERSION,
-    ( keys %$config ? ( config => $config ) : () ),
+    ( keys %$config   ? ( config     => $config )   : () ),
     ( keys %$composed ? ( x_composes => $composed ) : () ),
   };
 }
@@ -44,8 +44,8 @@ sub _metadata_class_composes {
     $composed->{ $component->name } = $component->name->VERSION;
   }
   for my $component ( $plugin->meta->linearized_isa ) {
-    next if $component->meta->name =~ /\||_ANON_/;    # skip unions.
-    next if $component->meta->name eq $plugin->meta->name; # skip self
+    next if $component->meta->name =~ /\||_ANON_/;            # skip unions.
+    next if $component->meta->name eq $plugin->meta->name;    # skip self
     $composed->{ $component->meta->name } = $component->meta->name->VERSION;
   }
 
@@ -60,7 +60,7 @@ sub _metadata_plugin {
     class   => $plugin->meta->name,
     name    => $plugin->plugin_name,
     version => $plugin->VERSION,
-    ( keys %$config ? ( config => $config ) : () ),
+    ( keys %$config   ? ( config     => $config )   : () ),
     ( keys %$composed ? ( x_composes => $composed ) : () ),
   };
 }
@@ -108,6 +108,25 @@ hand-written adjustments system-wide to get a useful interface.
 
 This exposes data about the roles and parent classes, and their respective versions in play
 on a given plugin, to give greater depth for problem diagnosis.
+
+    {
+      "class" : "Dist::Zilla::Plugin::AutoPrereqs", 
+      "name" : "@Author::KENTNL/AutoPrereqs", "version" : "5.041",
+      "x_composes" : {
+        "Dist::Zilla::Role::ConfigDumper"   : "5.041",
+        "Dist::Zilla::Role::FileFinderUser" : "5.041",
+        "Dist::Zilla::Role::PPI"            : "5.041",
+        "Dist::Zilla::Role::Plugin"         : "5.041",
+        "Dist::Zilla::Role::PrereqSource"   : "5.041",
+        "Moose::Object"                     : "2.1604"
+      }
+    }
+
+C<@ETHER> has already made excellent inroads into making this sort of metadata exposed
+via exporting C<version> in all C<metaconfig> plugin's she has access to, and this is an attempt
+at providing the same level of insight without requiring so much explict buy-in from plugin authors.
+
+This also has the neat side effect of showing what phases a plug-in is subscribed to.
 
 =head1 AUTHOR
 
