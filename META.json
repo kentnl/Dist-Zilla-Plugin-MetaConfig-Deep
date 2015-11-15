@@ -149,7 +149,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::Bootstrap" : "1.001002",
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Bootstrap::lib"
             }
          },
          {
@@ -159,7 +160,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::MetaConfig::Deep"
             }
          },
          {
@@ -169,7 +171,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::GithubMeta"
             }
          },
          {
@@ -197,7 +200,8 @@
                "Dist::Zilla::Role::MetaProvider" : "5.041",
                "Dist::Zilla::Role::MetaProvider::Provider" : "2.001002",
                "Dist::Zilla::Role::PPI" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::MetaProvides::Package"
             }
          },
          {
@@ -229,7 +233,8 @@
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::FileMunger" : "5.041",
                "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::MetaData::BuiltWith"
             }
          },
          {
@@ -249,7 +254,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::Contributors"
             }
          },
          {
@@ -281,7 +287,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::GatherDir"
             }
          },
          {
@@ -292,7 +299,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::License"
             }
          },
          {
@@ -303,7 +311,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::MetaJSON"
             }
          },
          {
@@ -320,7 +329,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::MetaYAML::Minimal"
             }
          },
          {
@@ -331,7 +341,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Manifest"
             }
          },
          {
@@ -343,7 +354,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Author::KENTNL::TravisCI"
             }
          },
          {
@@ -379,7 +391,8 @@
                "Dist::Zilla::Role::Plugin" : "5.041",
                "Dist::Zilla::Role::RepoFileInjector" : "0.005",
                "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "MooseX::SlurpyConstructor::Role::Object" : "1.2"
+               "MooseX::SlurpyConstructor::Role::Object" : "1.2",
+               "x_for" : "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING"
             }
          },
          {
@@ -389,7 +402,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::AfterBuild" : "5.041",
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::CopyFilesFromBuild"
             }
          },
          {
@@ -401,7 +415,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::MetaTests"
             }
          },
          {
@@ -413,7 +428,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::PodCoverageTests"
             }
          },
          {
@@ -425,7 +441,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::PodSyntaxTests"
             }
          },
          {
@@ -437,7 +454,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Test::ReportPrereqs"
             }
          },
          {
@@ -456,7 +474,8 @@
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
                "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041"
+               "Dist::Zilla::Role::TextTemplate" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Test::Kwalitee"
             }
          },
          {
@@ -483,7 +502,8 @@
                "Dist::Zilla::Role::Plugin" : "5.041",
                "Dist::Zilla::Role::PrereqSource" : "5.041",
                "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Meta::Role::__ANON__::SERIAL::24" : null
+               "Moose::Meta::Role::__ANON__::SERIAL::24" : null,
+               "x_for" : "Dist::Zilla::Plugin::Test::EOL"
             }
          },
          {
@@ -495,7 +515,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041"
+               "Dist::Zilla::Role::TextTemplate" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Test::MinimumVersion"
             }
          },
          {
@@ -505,7 +526,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -529,7 +551,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041"
+               "Dist::Zilla::Role::TextTemplate" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Test::Compile::PerFile"
             }
          },
          {
@@ -541,7 +564,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041"
+               "Dist::Zilla::Role::TextTemplate" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Test::Perl::Critic"
             }
          },
          {
@@ -551,7 +575,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FilePruner" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::ManifestSkip"
             }
          },
          {
@@ -580,7 +605,8 @@
                "Dist::Zilla::Role::Plugin" : "5.041",
                "Dist::Zilla::Role::Version::Sanitize" : "0.002001",
                "Dist::Zilla::Role::VersionProvider" : "5.041",
-               "Moose::Meta::Role::__ANON__::SERIAL::25" : null
+               "Moose::Meta::Role::__ANON__::SERIAL::25" : null,
+               "x_for" : "Dist::Zilla::Plugin::RewriteVersion::Sanitized"
             }
          },
          {
@@ -688,7 +714,8 @@
                "Dist::Zilla::Role::FileMunger" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
                "Moose::Meta::Role::__ANON__::SERIAL::26" : null,
-               "Pod::Elemental::PerlMunger" : "0.200003"
+               "Pod::Elemental::PerlMunger" : "0.200003",
+               "x_for" : "Dist::Zilla::Plugin::PodWeaver"
             }
          },
          {
@@ -704,7 +731,8 @@
                "Moose::Meta::Role::__ANON__::SERIAL::28" : null,
                "Moose::Meta::Role::__ANON__::SERIAL::29" : null,
                "Moose::Meta::Role::__ANON__::SERIAL::30" : null,
-               "Moose::Meta::Role::__ANON__::SERIAL::31" : null
+               "Moose::Meta::Role::__ANON__::SERIAL::31" : null,
+               "x_for" : "Dist::Zilla::Plugin::AutoPrereqs"
             }
          },
          {
@@ -720,7 +748,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Prereqs"
             }
          },
          {
@@ -730,7 +759,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Prereqs::AuthorDeps"
             }
          },
          {
@@ -744,7 +774,8 @@
                "Dist::Zilla::Role::PrereqSource" : "5.041",
                "Moose::Meta::Role::__ANON__::SERIAL::32" : null,
                "Moose::Meta::Role::__ANON__::SERIAL::33" : null,
-               "Moose::Meta::Role::__ANON__::SERIAL::34" : null
+               "Moose::Meta::Role::__ANON__::SERIAL::34" : null,
+               "x_for" : "Dist::Zilla::Plugin::MinimumPerl"
             }
          },
          {
@@ -758,7 +789,8 @@
                "Dist::Zilla::Role::MetaProvider" : "5.041",
                "Dist::Zilla::Role::PPI" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Meta::Role::__ANON__::SERIAL::35" : null
+               "Moose::Meta::Role::__ANON__::SERIAL::35" : null,
+               "x_for" : "Dist::Zilla::Plugin::Authority"
             }
          },
          {
@@ -779,7 +811,8 @@
                "Dist::Zilla::Role::Plugin" : "5.041",
                "Dist::Zilla::Role::PrereqSource" : "5.041",
                "Dist::Zilla::Role::TestRunner" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041"
+               "Dist::Zilla::Role::TextTemplate" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::MakeMaker"
             }
          },
          {
@@ -790,7 +823,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::InstallTool" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes"
             }
          },
          {
@@ -802,7 +836,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::PPI" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Readme::Brief"
             }
          },
          {
@@ -824,7 +859,8 @@
                "Dist::Zilla::Role::FilePruner" : "5.041",
                "Dist::Zilla::Role::FileWatcher" : "0.006",
                "Dist::Zilla::Role::PPI" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::ReadmeAnyFromPod"
             }
          },
          {
@@ -836,7 +872,8 @@
                "Dist::Zilla::Role::FileGatherer" : "5.041",
                "Dist::Zilla::Role::FileInjector" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Test::CPAN::Changes"
             }
          },
          {
@@ -851,7 +888,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TestRunner" : "5.041"
+               "Dist::Zilla::Role::TestRunner" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::RunExtraTests"
             }
          },
          {
@@ -861,7 +899,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::BeforeRelease" : "5.041",
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::TestRelease"
             }
          },
          {
@@ -871,7 +910,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::BeforeRelease" : "5.041",
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::ConfirmRelease"
             }
          },
          {
@@ -901,7 +941,8 @@
                "Dist::Zilla::Role::Git::DirtyFiles" : "2.036",
                "Dist::Zilla::Role::Git::Repo" : "2.036",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::Check"
             }
          },
          {
@@ -935,7 +976,8 @@
                "Dist::Zilla::Role::Git::Repo" : "2.036",
                "Dist::Zilla::Role::Git::StringFormatter" : "2.036",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::Commit"
             }
          },
          {
@@ -965,7 +1007,8 @@
                "Dist::Zilla::Role::Git::Repo" : "2.036",
                "Dist::Zilla::Role::Git::StringFormatter" : "2.036",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::Tag"
             }
          },
          {
@@ -982,7 +1025,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileMunger" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041"
+               "Dist::Zilla::Role::TextTemplate" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::NextRelease"
             }
          },
          {
@@ -1004,7 +1048,8 @@
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinderUser" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Meta::Role::__ANON__::SERIAL::36" : null
+               "Moose::Meta::Role::__ANON__::SERIAL::36" : null,
+               "x_for" : "Dist::Zilla::Plugin::BumpVersionAfterRelease"
             }
          },
          {
@@ -1040,7 +1085,8 @@
                "Dist::Zilla::Role::Git::Repo" : "2.036",
                "Dist::Zilla::Role::Git::StringFormatter" : "2.036",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::Commit"
             }
          },
          {
@@ -1065,7 +1111,8 @@
                "Dist::Zilla::Role::AfterRelease" : "5.041",
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Git::Repo" : "2.036",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::CommitBuild"
             }
          },
          {
@@ -1095,7 +1142,8 @@
                "Dist::Zilla::Role::Git::Repo" : "2.036",
                "Dist::Zilla::Role::Git::StringFormatter" : "2.036",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Git::Tag"
             }
          },
          {
@@ -1106,7 +1154,8 @@
                "Dist::Zilla::Role::BeforeRelease" : "5.041",
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::Releaser" : "5.041"
+               "Dist::Zilla::Role::Releaser" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::UploadToCPAN"
             }
          },
          {
@@ -1117,7 +1166,8 @@
                "Dist::Zilla::Role::AfterRelease" : "5.041",
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041"
+               "Dist::Zilla::Role::TextTemplate" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Twitter"
             }
          },
          {
@@ -1142,7 +1192,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Prereqs::Upgrade"
             }
          },
          {
@@ -1168,7 +1219,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled"
             }
          },
          {
@@ -1178,7 +1230,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::RemovePrereqs::Provided"
             }
          },
          {
@@ -1194,7 +1247,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Prereqs"
             }
          },
          {
@@ -1210,7 +1264,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041"
+               "Dist::Zilla::Role::PrereqSource" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::Prereqs"
             }
          },
          {
@@ -1220,7 +1275,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1230,7 +1286,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1240,7 +1297,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1250,7 +1308,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1260,7 +1319,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1270,7 +1330,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1280,7 +1341,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1290,7 +1352,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1300,7 +1363,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          },
          {
@@ -1310,7 +1374,8 @@
             "x_composes" : {
                "Dist::Zilla::Role::ConfigDumper" : "5.041",
                "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041"
+               "Dist::Zilla::Role::Plugin" : "5.041",
+               "x_for" : "Dist::Zilla::Plugin::FinderCode"
             }
          }
       ],
@@ -1321,7 +1386,8 @@
          },
          "version" : "5.041",
          "x_composes" : {
-            "Dist::Zilla::Role::ConfigDumper" : "5.041"
+            "Dist::Zilla::Role::ConfigDumper" : "5.041",
+            "x_for" : "Dist::Zilla::Dist::Builder"
          }
       }
    },
