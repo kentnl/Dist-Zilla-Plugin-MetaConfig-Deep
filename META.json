@@ -1319,7 +1319,10 @@
          "config" : {
             "is_trial" : "0"
          },
-         "version" : "5.041"
+         "version" : "5.041",
+         "x_composes" : {
+            "Dist::Zilla::Role::ConfigDumper" : "5.041"
+         }
       }
    },
    "x_authority" : "cpan:KENTNL"

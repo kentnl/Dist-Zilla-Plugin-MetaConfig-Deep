@@ -20,10 +20,13 @@ sub _metadata_zilla {
   my ($self) = @_;
 
   my $config = $self->zilla->dump_config;
+  my $composed = $self->_metadata_class_composes($self->zilla);
+
   return {
     class   => $self->zilla->meta->name,
     version => $self->zilla->VERSION,
     ( keys %$config ? ( config => $config ) : () ),
+    ( keys %$composed ? ( x_composes => $composed ) : () ),
   };
 }
 
@@ -38,22 +41,22 @@ sub _metadata_class_composes {
   my $composed = {};
 
   for my $component ( $plugin->meta->calculate_all_roles_with_inheritance ) {
-    next if $component->name =~ /\|/; # skip unions.
-    $composed-> { $component->name } = $component->name->VERSION;       
-  };
+    next if $component->name =~ /\|/;    # skip unions.
+    $composed->{ $component->name } = $component->name->VERSION;
+  }
   return $composed;
 }
 
 sub _metadata_plugin {
   my ( $self, $plugin ) = @_;
-  my $config = $plugin->dump_config;
-  my $composed = $self->_metadata_class_composes( $plugin );
+  my $config   = $plugin->dump_config;
+  my $composed = $self->_metadata_class_composes($plugin);
   return {
     class   => $plugin->meta->name,
     name    => $plugin->plugin_name,
     version => $plugin->VERSION,
     ( keys %$config ? ( config => $config ) : () ),
-    ( keys %$composed ? ( x_composes => $self->_metadata_class_composes( $plugin ) ) : () ),
+    ( keys %$composed ? ( x_composes => $composed ) : () ),
   };
 }
 
