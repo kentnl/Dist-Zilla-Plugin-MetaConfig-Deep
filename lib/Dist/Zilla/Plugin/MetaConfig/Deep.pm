@@ -113,18 +113,26 @@ hand-written adjustments system-wide to get a useful interface.
 This exposes data about the roles and parent classes, and their respective versions in play
 on a given plugin, to give greater depth for problem diagnosis.
 
-    {
-      "class" : "Dist::Zilla::Plugin::AutoPrereqs",
-      "name" : "@Author::KENTNL/AutoPrereqs", "version" : "5.041",
-      "x_composes" : {
-        "Dist::Zilla::Role::ConfigDumper"   : "5.041",
-        "Dist::Zilla::Role::FileFinderUser" : "5.041",
-        "Dist::Zilla::Role::PPI"            : "5.041",
-        "Dist::Zilla::Role::Plugin"         : "5.041",
-        "Dist::Zilla::Role::PrereqSource"   : "5.041",
-        "Moose::Object"                     : "2.1604"
-      }
+  {
+    "class" : "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING",
+    "config" : {...},
+    "name" : "@Author::KENTNL/Author::KENTNL::CONTRIBUTING",
+    "version" : "0.001005",
+    "x_composes" : {
+      "Dist::Zilla::Plugin::GenerateFile::FromShareDir" : "0.009",
+      "Dist::Zilla::Role::AfterBuild"                   : "5.041",
+      "Dist::Zilla::Role::AfterRelease"                 : "5.041",
+      "Dist::Zilla::Role::ConfigDumper"                 : "5.041",
+      "Dist::Zilla::Role::FileGatherer"                 : "5.041",
+      "Dist::Zilla::Role::FileInjector"                 : "5.041",
+      "Dist::Zilla::Role::FileMunger"                   : "5.041",
+      "Dist::Zilla::Role::Plugin"                       : "5.041",
+      "Dist::Zilla::Role::RepoFileInjector"             : "0.005",
+      "Dist::Zilla::Role::TextTemplate"                 : "5.041",
+      "Moose::Object"                                   : "2.1604",
+      "MooseX::SlurpyConstructor::Role::Object"         : "1.2"
     }
+  }
 
 C<@ETHER> has already made excellent inroads into making this sort of metadata exposed
 via exporting C<version> in all C<metaconfig> plugin's she has access to, and this is an attempt
