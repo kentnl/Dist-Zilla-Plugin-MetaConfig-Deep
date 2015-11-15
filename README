@@ -30,7 +30,7 @@ problem diagnosis.
 @ETHER has already made excellent inroads into making this sort of
 metadata exposed via exporting "version" in all "metaconfig" plugin's
 she has access to, and this is an attempt at providing the same level of
-insight without requiring so much explict buy-in from plugin authors.
+insight without requiring so much explicit buy-in from plugin authors.
 
 This also has the neat side effect of showing what phases a plug-in is
 subscribed to.

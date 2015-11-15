@@ -14,7 +14,7 @@ use Moose qw( with );
 
 with 'Dist::Zilla::Role::MetaProvider';
 
-sub _metadata_perl { { version => $] } }
+sub _metadata_perl { return { version => $] } }
 
 sub _metadata_zilla {
   my ($self) = @_;
@@ -25,8 +25,8 @@ sub _metadata_zilla {
   return {
     class   => $self->zilla->meta->name,
     version => $self->zilla->VERSION,
-    ( keys %$config   ? ( config     => $config )   : () ),
-    ( keys %$composed ? ( x_composes => $composed ) : () ),
+    ( keys %{$config}   ? ( config     => $config )   : () ),
+    ( keys %{$composed} ? ( x_composes => $composed ) : () ),
   };
 }
 
@@ -36,15 +36,15 @@ sub _metadata_plugins {
 }
 
 sub _metadata_class_composes {
-  my ( $self, $plugin ) = @_;
+  my ( undef, $plugin ) = @_;
 
   my $composed = {};
   for my $component ( $plugin->meta->calculate_all_roles_with_inheritance ) {
-    next if $component->name =~ /\||_ANON_/;    # skip unions and anon classes
+    next if $component->name =~ /[|]|_ANON_/sx;    # skip unions and anon classes
     $composed->{ $component->name } = $component->name->VERSION;
   }
   for my $component ( $plugin->meta->linearized_isa ) {
-    next if $component->meta->name =~ /\||_ANON_/;            # skip unions.
+    next if $component->meta->name =~ /[|]|_ANON_/sx;            # skip unions.
     next if $component->meta->name eq $plugin->meta->name;    # skip self
     $composed->{ $component->meta->name } = $component->meta->name->VERSION;
   }
@@ -60,10 +60,14 @@ sub _metadata_plugin {
     class   => $plugin->meta->name,
     name    => $plugin->plugin_name,
     version => $plugin->VERSION,
-    ( keys %$config   ? ( config     => $config )   : () ),
-    ( keys %$composed ? ( x_composes => $composed ) : () ),
+    ( keys %{$config}   ? ( config     => $config )   : () ),
+    ( keys %{$composed} ? ( x_composes => $composed ) : () ),
   };
 }
+
+
+
+
 
 sub metadata {
   my ($self) = @_;
@@ -124,9 +128,11 @@ on a given plugin, to give greater depth for problem diagnosis.
 
 C<@ETHER> has already made excellent inroads into making this sort of metadata exposed
 via exporting C<version> in all C<metaconfig> plugin's she has access to, and this is an attempt
-at providing the same level of insight without requiring so much explict buy-in from plugin authors.
+at providing the same level of insight without requiring so much explicit buy-in from plugin authors.
 
 This also has the neat side effect of showing what phases a plug-in is subscribed to.
+
+=for Pod::Coverage metadata
 
 =head1 AUTHOR
 
