@@ -34,21 +34,26 @@ sub _metadata_plugins {
 
 sub _metadata_class_composes {
   my ( $self, $plugin ) = @_;
-  my ( @composed ) = grep { !/\|/ } map { $_->name } 
-    $plugin->meta->calculate_all_roles_with_inheritance;
-  return { 
-    map { $_ , $_->VERSION } @composed
+
+  my $composed = {};
+
+  for my $component ( $plugin->meta->calculate_all_roles_with_inheritance ) {
+    next if $component->name =~ /\|/; # skip unions.
+    $composed-> { $component->name } = $component->name->VERSION;       
   };
+  return $composed;
 }
+
 sub _metadata_plugin {
   my ( $self, $plugin ) = @_;
   my $config = $plugin->dump_config;
+  my $composed = $self->_metadata_class_composes( $plugin );
   return {
     class   => $plugin->meta->name,
     name    => $plugin->plugin_name,
     version => $plugin->VERSION,
     ( keys %$config ? ( config => $config ) : () ),
-    x_composes => $self->_metadata_class_composes( $plugin ),
+    ( keys %$composed ? ( x_composes => $self->_metadata_class_composes( $plugin ) ) : () ),
   };
 }
 
