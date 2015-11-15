@@ -34,7 +34,7 @@ sub _metadata_plugins {
 
 sub _metadata_class_composes {
   my ( $self, $plugin ) = @_;
-  my ( @composed ) = map { $_->name } 
+  my ( @composed ) = grep { !/\|/ } map { $_->name } 
     $plugin->meta->calculate_all_roles_with_inheritance;
   return { 
     map { $_ , $_->VERSION } @composed
