@@ -33,7 +33,7 @@ sub _metadata_plugins {
 }
 
 sub _metadata_class_composes {
-  my ( $plugin ) = @_;
+  my ( $self, $plugin ) = @_;
   my ( @composed ) = map { $_->name } 
     $plugin->meta->calculate_all_roles_with_inheritance;
   return { 
@@ -48,6 +48,7 @@ sub _metadata_plugin {
     name    => $plugin->plugin_name,
     version => $plugin->VERSION,
     ( keys %$config ? ( config => $config ) : () ),
+    x_composes => $self->_metadata_class_composes( $plugin ),
   };
 }
 
