@@ -2,47 +2,94 @@ use strict;
 use warnings;
 
 package T::HashRule;
-use Path::Tiny qw(path);
 
 use parent 'T::Chain';
-use Exporter 5.57 qw( import );
-our @EXPORT_OK = (qw( is_hash ));
+
+use Exporter 5.57 qw(import);
+
+our @EXPORT_OK = ('is_hash');
 
 sub is_hash {
-  return __PACKAGE__->new();
-}
-
-sub init {
-  $_[0]->_add_rule(
-    'is_hash' => sub {
-      my ($topic) = @_;
-      my $topic_text = Test::Deep::render_val($topic);
-      return ( 0, "Expected: HASH\nGot: $topic_text\n" )
-        unless 'HASH' eq ref $topic;
-      return ( 1, "Got expected HASH" );
-    }
-  );
-}
-
-sub has_key {
-  my ( $self, $key, $rule ) = @_;
-  my $key_text = Test::Deep::render_val($key);
-  if ( not $rule ) {
-    return $self->_add_rule(
-      'has_key(' . $key_text . ')' => sub {
-        my ($topic) = @_;
-        return ( 0, "No Key $key_text" ) unless exists $topic->{$key};
-        return ( 1, "Found key $key" );
-      }
-    );
+  if ( scalar @_ == 2 ) {
+    my ( $label, $code ) = @_;
+    my $rule = __PACKAGE__->new( { label => $label } );
+    $rule->_is_hash;
+    $code->($rule);
+    return $rule;
   }
- return $self->_add_branch_rule(
-      'has_key(' . $key_text . ', <rules>)' => sub {
-        my ($topic) = @_;
-        return ( 0, "No Key $key_text" ) unless exists $topic->{$key};
-        return ( 1, "Found key $key" );
-      }, sub { $_[0]->{$key} }, $rule );
-
+  if ( scalar @_ == 1 ) {
+    my $rule = __PACKAGE__->new( { label => $_[0] } );
+    $rule->_is_hash;
+    return $rule;
+  }
 }
 
+__PACKAGE__->metachain->add_rule(
+  '_is_hash' => sub {
+    return sub {
+      my ( $context, $got ) = @_;
+      return $context->ok( 1, 'is of reftype hash' ) if 'HASH' eq ref $got;
+      return $context->ok( 0, 'is not of reftype hash' );
+    };
+  }
+);
+__PACKAGE__->metachain->add_rule(
+  'has_key' => sub {
+    my ( $key, $subrule ) = @_;
+    if ( not $subrule ) {
+      return sub {
+        my ( $context, $got ) = @_;
+        if ( not exists $got->{$key} ) {
+          return $context->ok( 0, 'hash does not contain ' . $key );
+        }
+        $context->ok( 1, 'hash contains key ' . $key );
+      };
+    }
+    if ( not $subrule->can('matches') ) {
+      die "Inappropriate subrule";
+    }
+    return sub {
+      my ( $context, $got ) = @_;
+      if ( not exists $got->{$key} ) {
+        return $context->ok( 0, 'hash does not contain ' . $key );
+      }
+      $context->ok( 1, 'hash contains key ' . $key );
+      return $subrule->matches( $got->{$key}, $context );
+    };
+  }
+);
+__PACKAGE__->metachain->add_rule(
+  'keys_are' => sub {
+    my ($key_array) = @_;
+    my $wanted_keys = {};
+    @{$wanted_keys}{@_} = (1) x scalar @_;
+    return sub {
+      my ( $context, $got ) = @_;
+      my $available = {};
+      @{$available}{ keys %{$got} } = (1) x keys %{$got};
+      $context->group(
+        'keys_are' => sub {
+          my $ret = $context->group(
+            'required_keys' => sub {
+              for my $key ( sort keys %{$wanted_keys} ) {
+                if ( exists $available->{$key} ) {
+                  delete $available->{$key};
+                  $context->ok( 1, "Has required key $key" );
+                  next;
+                }
+                return $context->ok( 0, "Lacks required key $key" );
+              }
+            }
+          );
+          return $ret if not $ret;
+          if ( keys %{$available} ) {
+            return $context->ok( 1, "No excess keys" );
+          }
+          $context->ok( 0, ( scalar keys %{$available} ) . " excess keys" );
+          return 0;
+        }
+      );
+    };
+  }
+);
 1;
