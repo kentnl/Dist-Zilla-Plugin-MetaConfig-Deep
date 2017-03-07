@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-MetaConfig-Deep
 
 {{$NEXT}}
+
+0.001001 2017-03-07T09:32:10Z 2bef685
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
 
  [Dependencies::Stats]
