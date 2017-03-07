@@ -4,13 +4,13 @@
       "Kent Fredric <kentnl@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.041, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Dist::Zilla version 6.009, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-      "version" : "2"
+      "version" : 2
    },
    "name" : "Dist-Zilla-Plugin-MetaConfig-Deep",
    "prereqs" : {
@@ -34,7 +34,6 @@
             "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" : "0.001002",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "0",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "0",
             "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0",
             "Dist::Zilla::Plugin::ConfirmRelease" : "0",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
@@ -70,7 +69,7 @@
             "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0",
             "Dist::Zilla::Plugin::RunExtraTests" : "0",
             "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0",
-            "Dist::Zilla::Plugin::Test::Compile::PerFile" : "0",
+            "Dist::Zilla::Plugin::Test::Compile::PerFile" : "0.003902",
             "Dist::Zilla::Plugin::Test::EOL" : "0",
             "Dist::Zilla::Plugin::Test::Kwalitee" : "0",
             "Dist::Zilla::Plugin::Test::MinimumVersion" : "0",
@@ -79,6 +78,7 @@
             "Dist::Zilla::Plugin::TestRelease" : "0",
             "Dist::Zilla::Plugin::Twitter" : "0",
             "Dist::Zilla::Plugin::UploadToCPAN" : "0",
+            "Dist::Zilla::Plugin::lib" : "0",
             "English" : "0",
             "Pod::Coverage::TrustPod" : "0",
             "Software::License::Perl_5" : "0",
@@ -86,13 +86,14 @@
             "Test::CPAN::Meta" : "0",
             "Test::EOL" : "0",
             "Test::Kwalitee" : "1.21",
+            "Test::MinimumVersion" : "0",
             "Test::More" : "0.96",
             "Test::Pod" : "1.41",
             "Test::Pod::Coverage" : "1.08"
          },
          "suggests" : {
-            "Dist::Zilla::App::Command::bakeini" : "0.002005",
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.025010"
+            "Dist::Zilla::App::Command::bakeini" : "0.002006",
+            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.025021"
          }
       },
       "runtime" : {
@@ -116,7 +117,7 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
-            "Test::More" : "0.89",
+            "Test::More" : "0",
             "perl" : "5.006"
          }
       }
@@ -124,7 +125,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::MetaConfig::Deep" : {
          "file" : "lib/Dist/Zilla/Plugin/MetaConfig/Deep.pm",
-         "version" : "0.001000"
+         "version" : "0.001001"
       }
    },
    "release_status" : "stable",
@@ -139,40 +140,41 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-MetaConfig-Deep"
       }
    },
-   "version" : "0.001000",
+   "version" : "0.001001",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.022000"
+         "version" : "5.025010"
       },
       "plugins" : [
          {
-            "class" : "Dist::Zilla::Plugin::Bootstrap::lib",
+            "class" : "Dist::Zilla::Plugin::lib",
             "config" : {
-               "Dist::Zilla::Role::Bootstrap" : {
-                  "try_built" : null
+               "Dist::Zilla::Plugin::lib" : {
+                  "lib" : [
+                     "lib"
+                  ]
                }
             },
-            "name" : "Bootstrap::lib",
-            "version" : "1.001000",
+            "name" : "lib",
+            "version" : "0.001001",
             "x_composes" : {
-               "Dist::Zilla::Role::Bootstrap" : "1.001002",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig::Deep",
             "name" : "@Author::KENTNL/MetaConfig::Deep",
-            "version" : "0.001000",
+            "version" : "0.001001",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::MetaProvider" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -180,10 +182,10 @@
             "name" : "@Author::KENTNL/GithubMeta",
             "version" : "0.54",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::MetaProvider" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -194,31 +196,39 @@
                      {
                         "class" : "Dist::Zilla::Plugin::FinderCode",
                         "name" : "@Author::KENTNL/MetaProvides::Package/AUTOVIV/:InstallModulesPM",
-                        "version" : "5.041"
+                        "version" : "6.009"
                      }
-                  ]
+                  ],
+                  "include_underscores" : 0
                },
                "Dist::Zilla::Role::MetaProvider::Provider" : {
-                  "inherit_missing" : "1",
-                  "inherit_version" : "1",
-                  "meta_noindex" : "1"
+                  "$Dist::Zilla::Role::MetaProvider::Provider::VERSION" : "2.002004",
+                  "inherit_missing" : 1,
+                  "inherit_version" : 1,
+                  "meta_noindex" : 1
+               },
+               "Dist::Zilla::Role::ModuleMetadata" : {
+                  "Module::Metadata" : "1.000033",
+                  "version" : "0.004"
                }
             },
             "name" : "@Author::KENTNL/MetaProvides::Package",
-            "version" : "2.003001",
+            "version" : "2.004003",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::MetaProvider::Provider" : "2.001002",
-               "Dist::Zilla::Role::PPI" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::MetaProvider" : "6.009",
+               "Dist::Zilla::Role::MetaProvider::Provider" : "2.002004",
+               "Dist::Zilla::Role::ModuleMetadata" : "0.004",
+               "Dist::Zilla::Role::PPI" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",
             "config" : {
                "Dist::Zilla::Plugin::MetaData::BuiltWith" : {
+                  "$Module::Metadata::VERSION" : "1.000033",
                   "_stash_key" : "x_BuiltWith",
                   "external_file_name" : "misc/built_with.json",
                   "show_config" : "1",
@@ -237,36 +247,36 @@
                }
             },
             "name" : "@Author::KENTNL/MetaData::BuiltWith",
-            "version" : "1.004002",
+            "version" : "1.004005",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::FileMunger" : "5.041",
-               "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::FileMunger" : "6.009",
+               "Dist::Zilla::Role::MetaProvider" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Contributors",
             "config" : {
                "Dist::Zilla::Plugin::Git::Contributors" : {
+                  "git --version" : "2.11.1",
                   "include_authors" : 0,
                   "include_releaser" : 0,
                   "order_by" : "name",
-                  "paths" : [
-                     "."
-                  ]
+                  "paths" : []
                }
             },
             "name" : "@Author::KENTNL/Git::Contributors",
-            "version" : "0.015",
+            "version" : "0.029",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::MetaProvider" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -293,38 +303,38 @@
                }
             },
             "name" : "@Author::KENTNL/Git::GatherDir",
-            "version" : "2.036",
+            "version" : "2.041",
             "x_composes" : {
-               "Dist::Zilla::Plugin::GatherDir" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Plugin::GatherDir" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
             "name" : "@Author::KENTNL/License",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
             "name" : "@Author::KENTNL/MetaJSON",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -336,39 +346,48 @@
                }
             },
             "name" : "@Author::KENTNL/MetaYAML::Minimal",
-            "version" : "0.001000",
+            "version" : "0.001001",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "@Author::KENTNL/Manifest",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::TravisCI",
+            "config" : {
+               "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" : {
+                  "fail_perls" : [
+                     "5.8"
+                  ],
+                  "skip_perls" : []
+               }
+            },
             "name" : "@Author::KENTNL/Author::KENTNL::TravisCI",
-            "version" : "0.001002",
+            "version" : "0.001004",
             "x_composes" : {
-               "Dist::Zilla::Plugin::TravisCI" : "0.008",
-               "Dist::Zilla::Role::AfterBuild" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Beam::Emitter" : "1.007",
+               "Dist::Zilla::Plugin::TravisCI" : "0.010",
+               "Dist::Zilla::Role::AfterBuild" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -384,95 +403,95 @@
                   "location" : "root",
                   "phase" : "build",
                   "source_filename" : "contributing-0.1.pod",
-                  "version" : "0.009"
+                  "version" : "0.013"
                },
                "Dist::Zilla::Role::RepoFileInjector" : {
                   "allow_overwrite" : 1,
                   "repo_root" : ".",
-                  "version" : "0.005"
+                  "version" : "0.007"
                }
             },
             "name" : "@Author::KENTNL/Author::KENTNL::CONTRIBUTING",
             "version" : "0.001005",
             "x_composes" : {
-               "Dist::Zilla::Plugin::GenerateFile::FromShareDir" : "0.009",
-               "Dist::Zilla::Role::AfterBuild" : "5.041",
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::FileMunger" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::RepoFileInjector" : "0.005",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604",
-               "MooseX::SlurpyConstructor::Role::Object" : "1.2"
+               "Dist::Zilla::Plugin::GenerateFile::FromShareDir" : "0.013",
+               "Dist::Zilla::Role::AfterBuild" : "6.009",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::FileMunger" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::RepoFileInjector" : "0.007",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004",
+               "MooseX::SlurpyConstructor::Role::Object" : "1.30"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::CopyFilesFromBuild",
             "name" : "@Author::KENTNL/CopyXBuild",
-            "version" : "0.151680",
+            "version" : "0.163040",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterBuild" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::AfterBuild" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaTests",
             "name" : "@Author::KENTNL/MetaTests",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Plugin::InlineFiles" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Plugin::InlineFiles" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::PodCoverageTests",
             "name" : "@Author::KENTNL/PodCoverageTests",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Plugin::InlineFiles" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Plugin::InlineFiles" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
             "name" : "@Author::KENTNL/PodSyntaxTests",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Plugin::InlineFiles" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Plugin::InlineFiles" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::ReportPrereqs",
             "name" : "@Author::KENTNL/Test::ReportPrereqs",
-            "version" : "0.021",
+            "version" : "0.025",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -486,13 +505,13 @@
             "name" : "@Author::KENTNL/Test::Kwalitee",
             "version" : "2.12",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -501,50 +520,51 @@
                "Dist::Zilla::Plugin::Test::EOL" : {
                   "filename" : "xt/author/eol.t",
                   "finder" : [
-                     ":InstallModules",
                      ":ExecFiles",
+                     ":InstallModules",
                      ":TestFiles"
                   ],
-                  "trailing_whitespace" : "1"
+                  "trailing_whitespace" : 1
                }
             },
             "name" : "@Author::KENTNL/Test::EOL",
-            "version" : "0.18",
+            "version" : "0.19",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinderUser" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::FileMunger" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinderUser" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::FileMunger" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::MinimumVersion",
             "name" : "@Author::KENTNL/Test::MinimumVersion",
-            "version" : "2.000006",
+            "version" : "2.000007",
             "x_composes" : {
-               "Dist::Zilla::Plugin::InlineFiles" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Plugin::InlineFiles" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : "@Author::KENTNL/Test::Compile::PerFile/AUTOVIV/:InstallModulesPM",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -557,19 +577,19 @@
                   "path_translator" : "base64_filter",
                   "prefix" : "t/00-compile",
                   "skip" : [],
-                  "test_template" : "01-basic.t.tpl",
+                  "test_template" : "02-raw-require.t.tpl",
                   "xt_mode" : null
                }
             },
             "name" : "@Author::KENTNL/Test::Compile::PerFile",
-            "version" : "0.003000",
+            "version" : "0.004000",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -577,23 +597,23 @@
             "name" : "@Author::KENTNL/Test::Perl::Critic",
             "version" : "3.000",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::ManifestSkip",
             "name" : "@Author::KENTNL/ManifestSkip",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FilePruner" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FilePruner" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -609,21 +629,23 @@
                   "skip_version_provider" : 0
                },
                "Dist::Zilla::Role::Version::Sanitize" : {
+                  "$Dist::Zilla::Role::Version::Sanitize::VERSION" : "0.002003",
                   "mantissa" : "6",
                   "normal_form" : "numify"
                }
             },
             "name" : "@Author::KENTNL/RewriteVersion::Sanitized",
-            "version" : "0.001005",
+            "version" : "0.001006",
             "x_composes" : {
-               "Dist::Zilla::Plugin::RewriteVersion" : "0.012",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinderUser" : "5.041",
-               "Dist::Zilla::Role::FileMunger" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::Version::Sanitize" : "0.002001",
-               "Dist::Zilla::Role::VersionProvider" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Plugin::BumpVersionAfterRelease::_Util" : "0.015",
+               "Dist::Zilla::Plugin::RewriteVersion" : "0.015",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinderUser" : "6.009",
+               "Dist::Zilla::Role::FileMunger" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::Version::Sanitize" : "0.002003",
+               "Dist::Zilla::Role::VersionProvider" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -638,113 +660,114 @@
                      {
                         "class" : "Pod::Weaver::Plugin::EnsurePod5",
                         "name" : "@CorePrep/EnsurePod5",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Plugin::H1Nester",
                         "name" : "@CorePrep/H1Nester",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Plugin::SingleEncoding",
                         "name" : "-SingleEncoding",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Name",
                         "name" : "Name",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Version",
                         "name" : "Version",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Region",
                         "name" : "prelude",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Generic",
                         "name" : "SYNOPSIS",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Generic",
                         "name" : "DESCRIPTION",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Generic",
                         "name" : "OVERVIEW",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
                         "name" : "METHODS",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
                         "name" : "ATTRIBUTES",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
                         "name" : "PRIVATE_ATTRIBUTES",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
                         "name" : "PRIVATE_METHODS",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Leftovers",
                         "name" : "Leftovers",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Region",
                         "name" : "postlude",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Authors",
                         "name" : "Authors",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Legal",
                         "name" : "Legal",
-                        "version" : "4.012"
+                        "version" : "4.015"
                      }
                   ]
                }
             },
             "name" : "@Author::KENTNL/PodWeaver",
-            "version" : "4.006",
+            "version" : "4.008",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinderUser" : "5.041",
-               "Dist::Zilla::Role::FileMunger" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604",
-               "Pod::Elemental::PerlMunger" : "0.200003"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinderUser" : "6.009",
+               "Dist::Zilla::Role::FileMunger" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004",
+               "Pod::Elemental::PerlMunger" : "0.200006"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::AutoPrereqs",
             "name" : "@Author::KENTNL/AutoPrereqs",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinderUser" : "5.041",
-               "Dist::Zilla::Role::PPI" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinderUser" : "6.009",
+               "Dist::Zilla::Role::PPI" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqScanner" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -756,23 +779,23 @@
                }
             },
             "name" : "@Author::KENTNL/BundleDevelSuggests",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs::AuthorDeps",
             "name" : "@Author::KENTNL/Prereqs::AuthorDeps",
-            "version" : "0.005",
+            "version" : "0.006",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -780,11 +803,11 @@
             "name" : "@Author::KENTNL/MinimumPerl",
             "version" : "1.006",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinderUser" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinderUser" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -792,13 +815,13 @@
             "name" : "@Author::KENTNL/Authority",
             "version" : "1.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinderUser" : "5.041",
-               "Dist::Zilla::Role::FileMunger" : "5.041",
-               "Dist::Zilla::Role::MetaProvider" : "5.041",
-               "Dist::Zilla::Role::PPI" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinderUser" : "6.009",
+               "Dist::Zilla::Role::FileMunger" : "6.009",
+               "Dist::Zilla::Role::MetaProvider" : "6.009",
+               "Dist::Zilla::Role::PPI" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -809,43 +832,43 @@
                }
             },
             "name" : "@Author::KENTNL/MakeMaker",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::BuildRunner" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::InstallTool" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Dist::Zilla::Role::TestRunner" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::BuildRunner" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::InstallTool" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Dist::Zilla::Role::TestRunner" : "6.009",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes",
             "name" : "@Author::KENTNL/Author::KENTNL::RecommendFixes",
-            "version" : "0.005001",
+            "version" : "0.005004",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::InstallTool" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::InstallTool" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Readme::Brief",
             "name" : "@Author::KENTNL/ShippedReadme",
-            "version" : "0.002005",
+            "version" : "0.003001",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::PPI" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::PPI" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -856,32 +879,37 @@
                }
             },
             "name" : "@Author::KENTNL/ReadmeAnyFromPod",
-            "version" : "0.150250",
+            "version" : "0.163250",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterBuild" : "5.041",
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::FileMunger" : "5.041",
-               "Dist::Zilla::Role::FilePruner" : "5.041",
+               "Dist::Zilla::Role::AfterBuild" : "6.009",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::FileMunger" : "6.009",
+               "Dist::Zilla::Role::FilePruner" : "6.009",
                "Dist::Zilla::Role::FileWatcher" : "0.006",
-               "Dist::Zilla::Role::PPI" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::PPI" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::CPAN::Changes",
+            "config" : {
+               "Dist::Zilla::Plugin::Test::CPAN::Changes" : {
+                  "changelog" : "Changes"
+               }
+            },
             "name" : "@Author::KENTNL/Test::CPAN::Changes",
-            "version" : "0.009",
+            "version" : "0.012",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileGatherer" : "5.041",
-               "Dist::Zilla::Role::FileInjector" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileGatherer" : "6.009",
+               "Dist::Zilla::Role::FileInjector" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -892,34 +920,34 @@
                }
             },
             "name" : "@Author::KENTNL/RunExtraTests",
-            "version" : "0.028",
+            "version" : "0.029",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TestRunner" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::TestRunner" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
             "name" : "@Author::KENTNL/TestRelease",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::BeforeRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::BeforeRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
             "name" : "@Author::KENTNL/ConfirmRelease",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::BeforeRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::BeforeRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -937,20 +965,21 @@
                   "changelog" : "Changes"
                },
                "Dist::Zilla::Role::Git::Repo" : {
+                  "git --version" : "2.11.1",
                   "repo_root" : "."
                }
             },
             "name" : "@Author::KENTNL/Git::Check",
-            "version" : "2.036",
+            "version" : "2.041",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterBuild" : "5.041",
-               "Dist::Zilla::Role::BeforeRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Git::DirtyFiles" : "2.036",
-               "Dist::Zilla::Role::Git::Repo" : "2.036",
+               "Dist::Zilla::Role::AfterBuild" : "6.009",
+               "Dist::Zilla::Role::BeforeRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Git::DirtyFiles" : "2.041",
+               "Dist::Zilla::Role::Git::Repo" : "2.041",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -969,6 +998,7 @@
                   "changelog" : "Changes"
                },
                "Dist::Zilla::Role::Git::Repo" : {
+                  "git --version" : "2.11.1",
                   "repo_root" : "."
                },
                "Dist::Zilla::Role::Git::StringFormatter" : {
@@ -976,16 +1006,16 @@
                }
             },
             "name" : "@Author::KENTNL/commit_dirty_files",
-            "version" : "2.036",
+            "version" : "2.041",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Git::DirtyFiles" : "2.036",
-               "Dist::Zilla::Role::Git::Repo" : "2.036",
-               "Dist::Zilla::Role::Git::StringFormatter" : "2.036",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Git::DirtyFiles" : "2.041",
+               "Dist::Zilla::Role::Git::Repo" : "2.041",
+               "Dist::Zilla::Role::Git::StringFormatter" : "2.041",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -995,11 +1025,12 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.001000-source",
+                  "tag" : "0.001001-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v"
                },
                "Dist::Zilla::Role::Git::Repo" : {
+                  "git --version" : "2.11.1",
                   "repo_root" : "."
                },
                "Dist::Zilla::Role::Git::StringFormatter" : {
@@ -1007,16 +1038,16 @@
                }
             },
             "name" : "@Author::KENTNL/tag_master",
-            "version" : "2.036",
+            "version" : "2.041",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::BeforeRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Git::Repo" : "2.036",
-               "Dist::Zilla::Role::Git::StringFormatter" : "2.036",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::BeforeRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Git::Repo" : "2.041",
+               "Dist::Zilla::Role::Git::StringFormatter" : "2.041",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1029,13 +1060,13 @@
             "name" : "@Author::KENTNL/Git::NextRelease",
             "version" : "0.004000",
             "x_composes" : {
-               "Dist::Zilla::Plugin::NextRelease" : "5.041",
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileMunger" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Plugin::NextRelease" : "6.009",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileMunger" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1051,13 +1082,14 @@
                }
             },
             "name" : "@Author::KENTNL/BumpVersionAfterRelease",
-            "version" : "0.012",
+            "version" : "0.015",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinderUser" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Plugin::BumpVersionAfterRelease::_Util" : "0.015",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinderUser" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1078,6 +1110,7 @@
                   "changelog" : "Changes"
                },
                "Dist::Zilla::Role::Git::Repo" : {
+                  "git --version" : "2.11.1",
                   "repo_root" : "."
                },
                "Dist::Zilla::Role::Git::StringFormatter" : {
@@ -1085,16 +1118,16 @@
                }
             },
             "name" : "@Author::KENTNL/commit_release_changes",
-            "version" : "2.036",
+            "version" : "2.041",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Git::DirtyFiles" : "2.036",
-               "Dist::Zilla::Role::Git::Repo" : "2.036",
-               "Dist::Zilla::Role::Git::StringFormatter" : "2.036",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Git::DirtyFiles" : "2.041",
+               "Dist::Zilla::Role::Git::Repo" : "2.041",
+               "Dist::Zilla::Role::Git::StringFormatter" : "2.041",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1109,18 +1142,19 @@
                   "release_message" : "Build results of %h (on %b)"
                },
                "Dist::Zilla::Role::Git::Repo" : {
+                  "git --version" : "2.11.1",
                   "repo_root" : "."
                }
             },
             "name" : "@Author::KENTNL/Git::CommitBuild",
-            "version" : "2.036",
+            "version" : "2.041",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterBuild" : "5.041",
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Git::Repo" : "2.036",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::AfterBuild" : "6.009",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Git::Repo" : "2.041",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1130,11 +1164,12 @@
                   "branch" : "releases",
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.001000",
+                  "tag" : "0.001001",
                   "tag_format" : "%v",
                   "tag_message" : "v%v"
                },
                "Dist::Zilla::Role::Git::Repo" : {
+                  "git --version" : "2.11.1",
                   "repo_root" : "."
                },
                "Dist::Zilla::Role::Git::StringFormatter" : {
@@ -1142,28 +1177,28 @@
                }
             },
             "name" : "@Author::KENTNL/tag_release",
-            "version" : "2.036",
+            "version" : "2.041",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::BeforeRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Git::Repo" : "2.036",
-               "Dist::Zilla::Role::Git::StringFormatter" : "2.036",
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::BeforeRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Git::Repo" : "2.041",
+               "Dist::Zilla::Role::Git::StringFormatter" : "2.041",
                "Dist::Zilla::Role::GitConfig" : "0.92",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "@Author::KENTNL/UploadToCPAN",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::BeforeRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::Releaser" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::BeforeRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::Releaser" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1171,11 +1206,11 @@
             "name" : "@Author::KENTNL/Twitter",
             "version" : "0.026",
             "x_composes" : {
-               "Dist::Zilla::Role::AfterRelease" : "5.041",
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::TextTemplate" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::AfterRelease" : "6.009",
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::TextTemplate" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1196,12 +1231,12 @@
                }
             },
             "name" : "@Author::KENTNL/Prereqs::Upgrade",
-            "version" : "0.001000",
+            "version" : "0.001001",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1223,23 +1258,23 @@
                }
             },
             "name" : "@Author::KENTNL/always_latest_develop_bundle",
-            "version" : "0.003001",
+            "version" : "0.003002",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::RemovePrereqs::Provided",
             "name" : "@Author::KENTNL/RemovePrereqs::Provided",
-            "version" : "0.001000",
+            "version" : "0.001001",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1251,12 +1286,12 @@
                }
             },
             "name" : "@Author::KENTNL/::Role::BundleDeps",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
@@ -1268,138 +1303,139 @@
                }
             },
             "name" : "Prereqs",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Dist::Zilla::Role::PrereqSource" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Dist::Zilla::Role::PrereqSource" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":InstallModules",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":IncModules",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":TestFiles",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ExtraTestFiles",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ExecFiles",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":PerlExecFiles",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ShareFiles",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":MainModule",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":AllFiles",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":NoFiles",
-            "version" : "5.041",
+            "version" : "6.009",
             "x_composes" : {
-               "Dist::Zilla::Role::ConfigDumper" : "5.041",
-               "Dist::Zilla::Role::FileFinder" : "5.041",
-               "Dist::Zilla::Role::Plugin" : "5.041",
-               "Moose::Object" : "2.1604"
+               "Dist::Zilla::Role::ConfigDumper" : "6.009",
+               "Dist::Zilla::Role::FileFinder" : "6.009",
+               "Dist::Zilla::Role::Plugin" : "6.009",
+               "Moose::Object" : "2.2004"
             }
          }
       ],
       "zilla" : {
          "class" : "Dist::Zilla::Dist::Builder",
          "config" : {
-            "is_trial" : "0"
+            "is_trial" : 0
          },
-         "version" : "5.041",
+         "version" : "6.009",
          "x_composes" : {
-            "Dist::Zilla" : "5.041",
-            "Dist::Zilla::Role::ConfigDumper" : "5.041",
-            "Moose::Object" : "2.1604"
+            "Dist::Zilla" : "6.009",
+            "Dist::Zilla::Role::ConfigDumper" : "6.009",
+            "Moose::Object" : "2.2004"
          }
       }
    },
-   "x_authority" : "cpan:KENTNL"
+   "x_authority" : "cpan:KENTNL",
+   "x_serialization_backend" : "Cpanel::JSON::XS version 3.0227"
 }
 

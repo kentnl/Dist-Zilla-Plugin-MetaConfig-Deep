@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::MetaConfig::Deep;
 
-our $VERSION = '0.001000';
+our $VERSION = '0.001001';
 
 # ABSTRACT: Experimental enhancements to MetaConfig
 
@@ -98,7 +98,7 @@ Dist::Zilla::Plugin::MetaConfig::Deep - Experimental enhancements to MetaConfig
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 DESCRIPTION
 
@@ -148,7 +148,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
