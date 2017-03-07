@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::MetaConfig::Deep;
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 # ABSTRACT: Experimental enhancements to MetaConfig
 
@@ -98,7 +98,7 @@ Dist::Zilla::Plugin::MetaConfig::Deep - Experimental enhancements to MetaConfig
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 DESCRIPTION
 

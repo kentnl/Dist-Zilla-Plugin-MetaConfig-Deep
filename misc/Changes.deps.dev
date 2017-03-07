@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-0.001001
+0.001002
+
+0.001001 2017-03-07T09:32:10Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::lib
  - Test::MinimumVersion
