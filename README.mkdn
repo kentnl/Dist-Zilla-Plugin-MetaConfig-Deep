@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::MetaConfig::Deep - Experimental enhancements to MetaConfig
 
 # VERSION
 
-version 0.001001
+version 0.001002
 
 # DESCRIPTION
 
